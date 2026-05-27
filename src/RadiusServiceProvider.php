@@ -8,11 +8,21 @@ class RadiusServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        // Register laravel-radius services
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/radius.php', 'radius'
+        );
+
+        $this->app->singleton('radius', function ($app) {
+            return new RadiusManager($app);
+        });
     }
 
     public function boot(): void
     {
-        // Boot laravel-radius services
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../config/radius.php' => config_path('radius.php'),
+            ], 'radius-config');
+        }
     }
 }

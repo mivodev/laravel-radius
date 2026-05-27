@@ -1,11 +1,18 @@
 {
     "name": "mivodev/laravel-radius",
-    "description": "Laravel Wrapper for Mivo Enterprise Core RADIUS Integration",
+    "description": "Laravel Wrapper for Mivo Radius UDP Client with Hybrid Connection Manager.",
     "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mivo Enterprise",
+            "email": "developer@mivo.id"
+        }
+    ],
     "require": {
-        "php": "^8.2 | ^8.3",
-        "mivodev/radius": "*@dev",
-        "illuminate/support": "^10.0 | ^11.0 | ^12.0 | ^13.0"
+        "php": "^8.2",
+        "illuminate/support": "^10.0|^11.0|^13.0",
+        "mivodev/radius": "*"
     },
     "autoload": {
         "psr-4": {
@@ -16,7 +23,12 @@
         "laravel": {
             "providers": [
                 "Mivo\\LaravelRadius\\RadiusServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Radius": "Mivo\\LaravelRadius\\Facades\\Radius"
+            }
         }
-    }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
