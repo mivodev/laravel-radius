@@ -34,14 +34,14 @@ class RadiusManager extends Manager
     public function createDefaultDriver(): RadiusClient
     {
         $config = $this->config->get('radius.connections.default', []);
+
         return $this->createConnection($config);
     }
 
     /**
      * Connect to a specific driver or dynamic configuration array.
-     * 
-     * @param string|array|null $name
-     * @return RadiusClient
+     *
+     * @param  string|array|null  $name
      */
     public function connect($name = null): RadiusClient
     {

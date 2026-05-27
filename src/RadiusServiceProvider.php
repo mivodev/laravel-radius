@@ -9,7 +9,7 @@ class RadiusServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/radius.php', 'radius'
+            __DIR__.'/../config/radius.php', 'radius'
         );
 
         $this->app->singleton('radius', function ($app) {
@@ -21,7 +21,7 @@ class RadiusServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/radius.php' => config_path('radius.php'),
+                __DIR__.'/../config/radius.php' => config_path('radius.php'),
             ], 'radius-config');
         }
     }
