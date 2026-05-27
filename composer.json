@@ -3,10 +3,24 @@
     "description": "Laravel Wrapper for Mivo Radius UDP Client with Hybrid Connection Manager.",
     "type": "library",
     "license": "MIT",
+    "homepage": "https://github.com/mivodev/laravel-radius",
+    "support": {
+        "issues": "https://github.com/mivodev/laravel-radius/issues",
+        "source": "https://github.com/mivodev/laravel-radius"
+    },
+    "keywords": [
+        "laravel",
+        "radius",
+        "mivo",
+        "facade",
+        "udp"
+    ],
     "authors": [
         {
             "name": "Mivo Enterprise",
-            "email": "developer@mivo.id"
+            "email": "mivo@dev.dyzulk.com",
+            "homepage": "https://github.com/mivodev",
+            "role": "Developer"
         }
     ],
     "require": {
